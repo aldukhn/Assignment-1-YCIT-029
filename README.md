@@ -75,6 +75,23 @@ The `authorize` function is used as a middleware to protect API routes based on 
 
 The Authorization Middleware is an essential component of this API, responsible for protecting routes and ensuring that only users with the correct permissions can access certain resources. It helps maintain the integrity of the application and enforces a proper separation of concerns.
 
+
+
+### How it works
+
+The authorization middleware is implemented using a higher-order function named `authorize`. It accepts a `permission` argument and returns a middleware function. The returned middleware function is then used to protect the desired route.
+
+The `permission` argument represents the required permission for a user to access the route. It can be one of the following strings: `"admin"`, `"read"`, `"write"`, or `"delete"`.
+
+The middleware function works as follows:
+
+1. Extract the JWT from the `Authorization` header of the incoming request.
+2. Verify the JWT using the secret key and extract the payload.
+3. Find the user in the database using the `userId` from the payload.
+4. Check if the user has the required permission by searching for it in the user's permissions array.
+5. If the user has the required permission, add the user object to the request (`req.user`) and call `next()` to continue processing the request.
+6. If the user does not have the required permission or any other checks fail, return an appropriate error response.
+
 ## Photo Upload Middleware
 
 Below is a breakdown of the middleware function:
@@ -107,21 +124,6 @@ const storage = multer.diskStorage({
 ```javascript
 export const upload = multer({ storage: storage });
 ```
-
-### How it works
-
-The authorization middleware is implemented using a higher-order function named `authorize`. It accepts a `permission` argument and returns a middleware function. The returned middleware function is then used to protect the desired route.
-
-The `permission` argument represents the required permission for a user to access the route. It can be one of the following strings: `"admin"`, `"read"`, `"write"`, or `"delete"`.
-
-The middleware function works as follows:
-
-1. Extract the JWT from the `Authorization` header of the incoming request.
-2. Verify the JWT using the secret key and extract the payload.
-3. Find the user in the database using the `userId` from the payload.
-4. Check if the user has the required permission by searching for it in the user's permissions array.
-5. If the user has the required permission, add the user object to the request (`req.user`) and call `next()` to continue processing the request.
-6. If the user does not have the required permission or any other checks fail, return an appropriate error response.
 
 ## Generating Tokens
 
