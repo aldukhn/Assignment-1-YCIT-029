@@ -2,6 +2,17 @@
 
 This repository contains a simple Node.js API with authorization middleware. The application is built using Express.js, JWT (JSON Web Tokens) for authentication, and lowdb as a simple JSON-based database for storing data.
 
+## LINKS
+
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [API Endpoints](#api-endpoints)
+- [Authorization Middleware](#authorization-middleware)
+- [Photo Upload Middleware](#photo-upload-middleware)
+- [Generating Tokens](#generating-tokens)
+- [insomnia Screenshots](#insomnia-screenshots)
+
+
 ## Technologies Used
 
 - Node.js
