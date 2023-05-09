@@ -36,7 +36,7 @@ To get started, follow the steps below:
 2. Change to the project directory:
 
    ```bash
-   cd /Assignment-YCIT-029/
+   cd Assignment-YCIT-029/
    ```
 
 3. Install dependencies:
@@ -45,13 +45,18 @@ To get started, follow the steps below:
    npm install
    ```
 
-4. Create a `.env` file in the root directory of the project and add your `SECRET_KEY` (a secret key for JWT signing and verification):
+4. Create a `.env` file in the root directory of the project and 
+   ```bash
+   copy .env.example .env 
+    ```
+    
+5. add your `SECRET_KEY` (a secret key for JWT signing and verification):
 
    ```bash
    SECRET_KEY=your-secret-key
    ```
 
-5. Start the server:
+6. Start the server:
 
    ```bash
    npm run dev
