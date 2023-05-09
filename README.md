@@ -61,7 +61,7 @@ The `authorize` middleware is used to protect API routes based on user permissio
 
 ## Photo Upload Middleware
 
-The `upload` middleware is used to upload `files` to the server. It accepts a file object as an argument and stores the file in the uploads/ directory. The file is given a unique name based on the current timestamp.
+The `upload` middleware is used to upload `files` to the server. It accepts a file object as an argument and stores the file in the `uploads/` directory. The file is given a unique name based on the current timestamp.
 
 
 ## Generating Tokens
