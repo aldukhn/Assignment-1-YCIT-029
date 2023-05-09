@@ -4,24 +4,24 @@ This repository contains a simple Node.js API with authorization middleware. The
 
 ## LINKS
 
-- [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [API Endpoints](#api-endpoints)
-- [Authorization Middleware](#authorization-middleware)
-- [Photo Upload Middleware](#photo-upload-middleware)
-- [Generating Tokens](#generating-tokens)
-- [insomnia Screenshots](#insomnia-screenshots)
+- [**Technologies Used**](#technologies-used)
+- [**Getting Started**](#getting-started)
+- [**API Endpoints**](#api-endpoints)
+- [**Authorization Middleware**](#authorization-middleware)
+- [**Photo Upload Middleware**](#photo-upload-middleware)
+- [**Generating Tokens**](#generating-tokens)
+- [**insomnia Screenshots**](#insomnia-screenshots)
 
 
 ## Technologies Used
 
-- Node.js
-- Express.js
-- JSON Web Tokens (JWT)
-- lowdb
-- dotenv
-- Chalk
-- multer
+- [Node.js](https://github.com/nodejs/node)
+- [Express.js](https://github.com/expressjs/express)
+- [JSON Web Tokens (JWT)](https://github.com/auth0/node-jsonwebtoken)
+- [lowdb](https://github.com/typicode/lowdb)
+- [dotenv](https://github.com/motdotla/dotenv)
+- [Chalk](https://github.com/chalk/chalk)
+- [multer](https://github.com/expressjs/multer)
 
 ## Getting Started
 
