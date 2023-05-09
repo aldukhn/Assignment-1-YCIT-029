@@ -14,28 +14,25 @@ dotenv.config();
 
 const SECRET_KEY = process.env.SECRET_KEY;
 
-// You can add more permissions if you want or extend the logic to support roles or permissions scoped to specific resources (e.g. "read:animals")
-
-// This is a higher-order function that returns a middleware function and with permission argument frozen-in in the closure
 export function authorize(permission) {
   if (
     !permission ||
     typeof permission !== "string" ||
     !["admin", "read", "write", "delete"].includes(permission)
   ) {
-    throw new Error("Invalid permission argument" + permission); // This will prevent the server from starting
+    throw new Error("Invalid permission argument" + permission);
   }
 
   return (req, res, next) => {
-    // Extract JWT from the request header
+    // Get JWT from the header
     const authHeader = req.header("Authorization");
     if (!authHeader) {
       return res.status(401).json({ message: "Unauthorized" });
     }
 
-    const token = authHeader.split(" ")[1]; // Assuming the header format is 'Bearer <JWT>'
+    const token = authHeader.split(" ")[1]; // header format is 'BASIC <JWT>'
 
-    // Verify the JWT and extract the payload
+    // Verify the JWT and get the payload
     let payload;
     try {
       payload = jwt.verify(token, SECRET_KEY);
